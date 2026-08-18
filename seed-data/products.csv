@@ -1,11 +1,11 @@
 sku,name,category,quantityInStock,quantityReserved,quantityDamaged,reorderThreshold,minStockLevel,zone,rack,bin
+PRD-101,Silk Designer Dress,Fashion Apparel,40,5,0,10,5,Zone A,Rack 01,Bin 01
+PRD-102,Casual Cotton T-Shirt,Fashion Apparel,85,12,0,15,10,Zone A,Rack 01,Bin 02
+PRD-103,Running Sneakers,Footwear,30,4,0,8,4,Zone A,Rack 01,Bin 03
+PRD-104,Laptop Backpack,Accessories,50,8,0,10,5,Zone B,Rack 01,Bin 01
+PRD-105,Wireless Headphones,Electronics,35,6,1,10,5,Zone B,Rack 01,Bin 02
+PRD-106,Smart Watch,Electronics,25,3,0,5,3,Zone B,Rack 01,Bin 03
+PRD-107,Ergonomic Mesh Office Chair,Furniture,15,2,0,5,2,Zone C,Rack 01,Bin 01
+PRD-108,Standing Desk Converter,Furniture,12,1,0,4,2,Zone C,Rack 01,Bin 02
 PRD-001,Wireless Ergonomic Mouse,Electronics,45,10,0,15,10,Zone A,Rack 01,Bin 04
 PRD-002,Mechanical Gaming Keyboard,Electronics,28,8,1,10,5,Zone A,Rack 01,Bin 08
-PRD-003,27-inch 4K Monitor,Electronics,12,5,0,8,4,Zone A,Rack 02,Bin 01
-PRD-004,Noise Cancelling Headphones,Electronics,18,6,2,10,5,Zone B,Rack 01,Bin 03
-PRD-005,USB-C Docking Station,Electronics,8,6,0,10,5,Zone A,Rack 03,Bin 12
-PRD-006,Ergonomic Mesh Office Chair,Furniture,5,4,0,5,3,Zone C,Rack 01,Bin 01
-PRD-007,Dual Monitor Arm Mount,Furniture,22,2,0,8,5,Zone C,Rack 02,Bin 05
-PRD-008,Standing Desk Converter,Furniture,3,3,1,5,2,Zone C,Rack 03,Bin 02
-PRD-009,High-Speed HDMI 2.1 Cable,Accessories,150,20,0,30,15,Zone B,Rack 02,Bin 10
-PRD-010,Cat6 Ethernet Cable (25ft),Accessories,95,12,0,20,10,Zone B,Rack 02,Bin 11

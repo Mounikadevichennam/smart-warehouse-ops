@@ -84,18 +84,38 @@ const initMemoryStore = async () => {
 
   // Products
   const productsCsv = parseCSV(path.join(seedDir, 'products.csv'));
-  store.products = productsCsv.map((p, idx) => ({
-    _id: `prod_${idx + 1}`,
-    sku: p.sku,
-    name: p.name,
-    category: p.category || 'General',
-    quantityInStock: parseInt(p.quantityInStock) || 0,
-    quantityReserved: parseInt(p.quantityReserved) || 0,
-    quantityDamaged: parseInt(p.quantityDamaged) || 0,
-    reorderThreshold: parseInt(p.reorderThreshold) || 10,
-    minStockLevel: parseInt(p.minStockLevel) || 5,
-    location: { zone: p.zone || 'Zone A', rack: p.rack || 'Rack 01', bin: p.bin || 'Bin 01' },
-  }));
+  const productPriceMap = {
+    'PRD-101': { price: 1499, rating: 4.9, image: 'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=80', desc: 'Elegant handcrafted silk designer dress tailored for luxury & special occasions.' },
+    'PRD-102': { price: 699, rating: 4.7, image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80', desc: 'Premium 100% breathable organic cotton daily casual t-shirt.' },
+    'PRD-103': { price: 2299, rating: 4.8, image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80', desc: 'Lightweight high-performance cushion running shoes for maximum comfort.' },
+    'PRD-104': { price: 999, rating: 4.6, image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80', desc: 'Water-resistant multi-compartment laptop backpack with USB charging port.' },
+    'PRD-105': { price: 1799, rating: 4.8, image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80', desc: 'Active noise-cancelling wireless Bluetooth headphones with 30h battery life.' },
+    'PRD-106': { price: 2499, rating: 4.7, image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80', desc: 'Fitness tracker smartwatch with heart rate monitor, SpO2 & HD display.' },
+    'PRD-107': { price: 5999, rating: 4.9, image: 'https://images.unsplash.com/photo-1580480055273-228ff5388ef8?auto=format&fit=crop&w=800&q=80', desc: 'High-back ergonomic mesh chair with adjustable lumbar support & 3D armrests.' },
+    'PRD-108': { price: 3499, rating: 4.8, image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80', desc: 'Dual-tier gas spring standing desk converter for ergonomic home & office workstation.' },
+    'PRD-001': { price: 899, rating: 4.6, image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80', desc: 'Wireless ergonomic mouse with quiet clicks & adjustable DPI.' },
+    'PRD-002': { price: 2199, rating: 4.8, image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80', desc: 'RGB mechanical gaming keyboard with tactile blue switches.' }
+  };
+
+  store.products = productsCsv.map((p, idx) => {
+    const meta = productPriceMap[p.sku] || { price: 1299, rating: 4.5, image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80', desc: 'Quality certified warehouse catalog product.' };
+    return {
+      _id: `prod_${idx + 1}`,
+      sku: p.sku,
+      name: p.name,
+      category: p.category || 'General',
+      price: meta.price,
+      rating: meta.rating,
+      image: meta.image,
+      description: meta.desc,
+      quantityInStock: parseInt(p.quantityInStock) || 0,
+      quantityReserved: parseInt(p.quantityReserved) || 0,
+      quantityDamaged: parseInt(p.quantityDamaged) || 0,
+      reorderThreshold: parseInt(p.reorderThreshold) || 10,
+      minStockLevel: parseInt(p.minStockLevel) || 5,
+      location: { zone: p.zone || 'Zone A', rack: p.rack || 'Rack 01', bin: p.bin || 'Bin 01' },
+    };
+  });
 
   const prodMapBySku = {};
   store.products.forEach((p) => (prodMapBySku[p.sku] = p));
