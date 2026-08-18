@@ -88,15 +88,30 @@ Every stage completion automatically records and persists:
 
 ## 5. Order Tracking
 
-Customers click **"Track Order"** on any placed order to view a live 5-stage milestone stepper:
+Customers click **Track Order** on any placed order to view the complete 5-stage order journey:
 
-$$\begin{aligned}
-\checkmark \; &\mathbf{1.\; Order\; Placed\; \&\; Warehouse\; Assigned} && (\text{Central Fulfillment Hub - Zone A}) \\
-\checkmark \; &\mathbf{2.\; Warehouse\; Item\; Picking} && (\text{Completed Timestamp}) \\
-\checkmark \; &\mathbf{3.\; Order\; Packaging\; \&\; Securing} && (\text{Completed Timestamp}) \\
-\checkmark \; &\mathbf{4.\; Quality\; Control\; \&\; Inspection} && (\text{Passed Timestamp}) \\
-\checkmark \; &\mathbf{5.\; Dispatch\; \&\; Transit\; Delivery} && (\text{Dispatched Timestamp})
-\end{aligned}$$
+**1. Order Placed & Warehouse Assigned**  
+Central Fulfillment Hub - Zone A
+
+↓  
+
+**2. Warehouse Item Picking**  
+Completed timestamp recorded
+
+↓
+
+**3. Order Packaging & Securing**  
+Completed timestamp recorded
+
+↓
+
+**4. Quality Control & Inspection**  
+Passed timestamp recorded
+
+↓
+
+**5. Dispatch & Delivery**  
+Dispatched timestamp recorded
 
 - **Real-Time Data**: Automatically reflects updates from the backend when warehouse workers advance stages.
 - **Privacy Scoped**: Customers view only their own orders without exposing internal staff emails or sensitive management notes.
@@ -174,7 +189,7 @@ CURRENT STATUS: DISPATCHED
 
 Items and inventory in the system follow a 4-tier physical spatial hierarchy:
 
-$$\text{Warehouse Hub} \longrightarrow \text{Zone (A/B/C)} \longrightarrow \text{Rack (01/02/03)} \longrightarrow \text{Bin (01--12)}$$
+**Warehouse Hub** → **Zone (A/B/C)** → **Rack (01/02/03)** → **Bin (01–12)**
 
 - **Pick Route Optimization**: Picking tasks display exact bin locations (`Zone A • Rack 01 • Bin 04`) so pickers navigate directly to stock items.
 - **Capacity Tracking**: Warehouse locations track max capacity vs. current occupancy.
@@ -319,22 +334,20 @@ flowchart TD
 
 To demonstrate the complete end-to-end integration:
 
-$$\begin{array}{rll}
-\mathbf{Step\; 1:} & \text{Login as Customer} & (\texttt{customer@demo.com} \;/\; \texttt{Demo@123}) \\
-\mathbf{Step\; 2:} & \text{Browse Shop} & \text{Select "Silk Designer Dress" (₹1,499), select Size M, click Add to Cart} \\
-\mathbf{Step\; 3:} & \text{Checkout} & \text{Fill address details and click "PLACE ORDER"} \\
-\mathbf{Step\; 4:} & \text{Order Created} & \text{System displays Order ID } \#\text{ORD-0997 assigned to Zone A} \\
-\mathbf{Step\; 5:} & \text{Login as Picker} & (\texttt{picker1@warehouse.com} \;/\; \texttt{worker123}, \text{Role: Picker}) \\
-\mathbf{Step\; 6:} & \text{Complete Picking} & \text{Click "MARK PICKING COMPLETE" on } \#\text{ORD-0997} \\
-\mathbf{Step\; 7:} & \text{Login as Customer} & \text{Track Order } \rightarrow \text{Milestone 2 shows Picked by Suresh Reddy} \\
-\mathbf{Step\; 8:} & \text{Login as Packer} & (\texttt{packer1@warehouse.com} \;/\; \texttt{worker123}, \text{Role: Packer}) \\
-\mathbf{Step\; 9:} & \text{Complete Packing} & \text{Click "MARK PACKING COMPLETE" on } \#\text{ORD-0997} \\
-\mathbf{Step\; 10:} & \text{Login as QC} & (\texttt{qc1@warehouse.com} \;/\; \texttt{worker123}, \text{Role: QC}) \\
-\mathbf{Step\; 11:} & \text{Pass QC} & \text{Click "PASS QC" on } \#\text{ORD-0997} \\
-\mathbf{Step\; 12:} & \text{Login as Dispatcher} & (\texttt{dispatch1@warehouse.com} \;/\; \texttt{worker123}, \text{Role: Dispatch}) \\
-\mathbf{Step\; 13:} & \text{Complete Dispatch} & \text{Click "MARK DISPATCH COMPLETE" on } \#\text{ORD-0997} \\
-\mathbf{Step\; 14:} & \text{Login as Customer} & \text{Track Order } \rightarrow \text{Displays DISPATCHED with full worker traceability!}
-\end{array}$$
+1. **Login as Customer** (`customer@demo.com` / `Demo@123`)
+2. **Browse Shop**: Select "Silk Designer Dress" (₹1,499), select Size M, click Add to Cart
+3. **Checkout**: Fill address details and click "PLACE ORDER"
+4. **Order Created**: System displays Order ID `#ORD-0997` assigned to Zone A
+5. **Login as Picker** (`picker1@warehouse.com` / `worker123`, Role: Picker)
+6. **Complete Picking**: Click "MARK PICKING COMPLETE" on `#ORD-0997`
+7. **Login as Customer**: Track Order → Milestone 2 shows Picked by Suresh Reddy
+8. **Login as Packer** (`packer1@warehouse.com` / `worker123`, Role: Packer)
+9. **Complete Packing**: Click "MARK PACKING COMPLETE" on `#ORD-0997`
+10. **Login as QC** (`qc1@warehouse.com` / `worker123`, Role: QC)
+11. **Pass QC**: Click "PASS QC" on `#ORD-0997`
+12. **Login as Dispatcher** (`dispatch1@warehouse.com` / `worker123`, Role: Dispatch)
+13. **Complete Dispatch**: Click "MARK DISPATCH COMPLETE" on `#ORD-0997`
+14. **Login as Customer**: Track Order → Displays DISPATCHED with full worker traceability!
 
 ---
 
