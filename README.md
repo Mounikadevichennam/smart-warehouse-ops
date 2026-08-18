@@ -196,34 +196,15 @@ When an anomaly occurs during fulfillment (e.g., missing stock, damaged item, or
 
 ```mermaid
 flowchart LR
-    subgraph Clients["Frontend Layer (React + Vite)"]
-        C[Customer Portal]
-        M[Manager Dashboard]
-        S[Supervisor Desk]
-        A[Admin Catalog]
-        W[Worker Portal]
-    end
+    Customer --> Frontend
+    Manager --> Frontend
+    Supervisor --> Frontend
+    Admin --> Frontend
+    Worker --> Frontend
 
-    subgraph API["API Router & Middleware"]
-        R["/api/auth & /api/orders & /api/tasks"]
-        AUTH[JWT & Role Authorization]
-    end
-
-    subgraph Core["Backend Engine (Express Node.js)"]
-        WF[Order Fulfillment Engine]
-        PE[Priority Score Engine]
-        TE[Task Assignment Engine]
-    end
-
-    subgraph Storage["Persistence Layer"]
-        DB[(MongoDB Atlas / Local)]
-        MS[(CSV MemoryStore Fallback)]
-    end
-
-    C & M & S & A & W --> R
-    R --> AUTH --> WF
-    WF --> PE & TE
-    WF --> DB & MS
+    Frontend --> API
+    API --> Backend
+    Backend --> Database
 ```
 
 ---
@@ -320,28 +301,16 @@ When MongoDB is unavailable, `connectDB()` automatically boots the **In-Memory C
 
 ```mermaid
 flowchart TD
-    A[Customer Browses & Places Order] --> B[Order Created #ORD-XXXX]
-    B --> C[Assign Warehouse: Central Fulfillment Hub - Zone A]
-    C --> D[Generate PICKING Task]
-    
-    D --> E{Picker Action}
-    E -->|Mark Picking Complete| F[Order Status: PICKED]
-    F --> G[Generate PACKING Task]
-    
-    G --> H{Packer Action}
-    H -->|Mark Packing Complete| I[Order Status: PACKED]
-    I --> J[Generate QC Task]
-    
-    J --> K{QC Inspection}
-    K -->|Pass QC| L[Order Status: QC_PASSED]
-    K -->|Fail QC| M[Order Status: EXCEPTION_PAUSED]
-    M --> N[Supervisor Exception Desk]
-    N -->|Resolve Issue| J
-    
-    L --> O[Generate DISPATCH Task]
-    O --> P{Dispatcher Action}
-    P -->|Mark Dispatched| Q[Order Status: DISPATCHED / COMPLETED]
-    Q --> R[Customer Live Stepper Updated to Delivered]
+    A[Customer Places Order] --> B[Order Created]
+    B --> C[Warehouse Assigned]
+    C --> D[Picking Stage]
+    D --> E[Packing Stage]
+    E --> F[Quality Check]
+    F -->|Passed| G[Dispatch Stage]
+    F -->|Failed| H[Exception Desk]
+    H --> F
+    G --> I[Order Dispatched]
+    I --> J[Customer Tracking Updated]
 ```
 
 ---
