@@ -1,0 +1,3 @@
+requestNumber,sku,requestedQuantity,status,requestedByEmail,confirmedByEmail
+RST-5001,PRD-006,10,REQUESTED,manager@warehouse.com,
+RST-5002,PRD-008,5,CONFIRMED_RECEIVED,manager@warehouse.com,admin@warehouse.com

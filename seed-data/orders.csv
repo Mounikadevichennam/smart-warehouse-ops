@@ -1,0 +1,8 @@
+orderNumber,customerName,destinationCity,estimatedTransitDays,deliveryDeadline,priority,priorityScore,status
+ORD-1024,TechCorp Solutions,Hyderabad,2,2026-08-18T18:00:00.000Z,CRITICAL,92,DISPATCHED
+ORD-1025,Apex Logistics,Kakinada,1,2026-08-18T20:00:00.000Z,HIGH,78,PACKING_IN_PROGRESS
+ORD-1026,Vanguard Retail,Vijayawada,1,2026-08-19T12:00:00.000Z,HIGH,72,PICKING_IN_PROGRESS
+ORD-1027,Nexus Enterprises,Visakhapatnam,2,2026-08-19T15:00:00.000Z,NORMAL,58,ALLOCATED
+ORD-1028,Horizon Media,Bengaluru,3,2026-08-20T10:00:00.000Z,NORMAL,50,ALLOCATED
+ORD-1029,CloudNine Labs,Chennai,2,2026-08-18T16:00:00.000Z,CRITICAL,88,EXCEPTION_PAUSED
+ORD-1030,Delta Systems,Hyderabad,2,2026-08-21T18:00:00.000Z,LOW,35,CREATED

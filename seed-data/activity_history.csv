@@ -1,0 +1,10 @@
+orderNumber,action,performedByName,performedByRole,details,timestamp
+ORD-1024,Order Created,System,SYSTEM,Order received for TechCorp Solutions,2026-08-17T09:00:00.000Z
+ORD-1024,Priority Calculated,PriorityEngine,SYSTEM,Priority score set to 92 (CRITICAL),2026-08-17T09:05:00.000Z
+ORD-1024,Stock Allocated,AllocationEngine,SYSTEM,Inventory allocated for PRD-001 and PRD-009,2026-08-17T09:06:00.000Z
+ORD-1024,Picked,Suresh Reddy,Picker,Picked 2x PRD-001 and 5x PRD-009 from Zone A,2026-08-17T10:30:00.000Z
+ORD-1024,Packed,Priya Naidu,Packer,Packed in heavy-duty shipping crate #B-91,2026-08-17T11:15:00.000Z
+ORD-1024,QC Passed,Meena Devi,QC,QC inspection passed. Packaging intact.,2026-08-17T12:00:00.000Z
+ORD-1024,Dispatched,Arjun Singh,Dispatch,Order handed to express transit dispatch,2026-08-17T12:45:00.000Z
+ORD-1025,Picking Started,Ramesh Varma,Picker,Started picking task TSK-8002,2026-08-17T13:00:00.000Z
+ORD-1029,QC Failed,Meena Devi,QC,Damaged item reported (EXP-9001). Task paused.,2026-08-17T14:20:00.000Z

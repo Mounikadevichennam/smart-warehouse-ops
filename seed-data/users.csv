@@ -1,0 +1,7 @@
+name,email,password,role
+Vikram Sharma,manager@warehouse.com,admin123,MANAGER
+Ananya Rao,supervisor@warehouse.com,admin123,SUPERVISOR
+Rajesh Kumar,admin@warehouse.com,admin123,ADMIN
+Demo Customer,customer@demo.com,Demo@123,CUSTOMER
+Apex Logistics,customer@warehouse.com,admin123,CUSTOMER
+TechCorp Solutions,customer2@warehouse.com,admin123,CUSTOMER

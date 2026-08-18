@@ -1,0 +1,7 @@
+name,email,password,role,status,completedTasksCount
+Suresh Reddy,picker1@warehouse.com,worker123,Picker,IDLE,14
+Ramesh Varma,picker2@warehouse.com,worker123,Picker,BUSY,9
+Priya Naidu,packer1@warehouse.com,worker123,Packer,IDLE,18
+Kiran Patel,packer2@warehouse.com,worker123,Packer,IDLE,12
+Meena Devi,qc1@warehouse.com,worker123,QC,IDLE,22
+Arjun Singh,dispatch1@warehouse.com,worker123,Dispatch,IDLE,25

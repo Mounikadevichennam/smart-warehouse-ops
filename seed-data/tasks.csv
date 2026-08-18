@@ -1,0 +1,7 @@
+taskNumber,orderNumber,stage,assignedWorkerEmail,status,priority,zone,rack,bin
+TSK-8001,ORD-1024,DISPATCH,dispatch1@warehouse.com,COMPLETED,CRITICAL,Zone A,Rack 01,Bin 04
+TSK-8002,ORD-1025,PACKING,packer1@warehouse.com,IN_PROGRESS,HIGH,Zone A,Rack 01,Bin 08
+TSK-8003,ORD-1026,PICKING,picker2@warehouse.com,IN_PROGRESS,HIGH,Zone A,Rack 01,Bin 04
+TSK-8004,ORD-1027,PICKING,,PENDING,NORMAL,Zone A,Rack 02,Bin 01
+TSK-8005,ORD-1028,PICKING,,PENDING,NORMAL,Zone B,Rack 02,Bin 11
+TSK-8006,ORD-1029,QC,qc1@warehouse.com,PAUSED,CRITICAL,Zone C,Rack 01,Bin 01

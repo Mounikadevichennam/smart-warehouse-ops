@@ -1,0 +1,3 @@
+exceptionNumber,orderNumber,taskNumber,reportedByWorkerEmail,type,description,status,resolutionNotes
+EXP-9001,ORD-1029,TSK-8006,qc1@warehouse.com,DAMAGED_ITEM,One Ergonomic Mesh Chair (PRD-006) has a broken armrest mesh during QC check,OPEN,
+EXP-9002,ORD-1023,TSK-7999,picker1@warehouse.com,MISSING_ITEM,Item missing from Bin 03 during picking,RESOLVED,Replaced item from secondary buffer rack and verified stock.

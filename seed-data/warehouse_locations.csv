@@ -1,0 +1,11 @@
+zone,rack,bin,capacity,currentOccupancy,status
+Zone A,Rack 01,Bin 04,100,45,ACTIVE
+Zone A,Rack 01,Bin 08,50,28,ACTIVE
+Zone A,Rack 02,Bin 01,20,12,ACTIVE
+Zone A,Rack 03,Bin 12,30,8,ACTIVE
+Zone B,Rack 01,Bin 03,40,18,ACTIVE
+Zone B,Rack 02,Bin 10,200,150,ACTIVE
+Zone B,Rack 02,Bin 11,150,95,ACTIVE
+Zone C,Rack 01,Bin 01,10,5,ACTIVE
+Zone C,Rack 02,Bin 05,30,22,ACTIVE
+Zone C,Rack 03,Bin 02,10,3,ACTIVE
